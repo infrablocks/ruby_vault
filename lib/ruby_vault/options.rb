@@ -4,7 +4,6 @@ require_relative 'options/factory'
 
 module RubyVault
   module Options
-
   end
 end
 

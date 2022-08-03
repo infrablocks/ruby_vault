@@ -6,7 +6,6 @@ require 'logger'
 
 module RubyVault
   class << self
-
     def configuration
       @configuration ||= Configuration.new
     end
@@ -38,6 +37,4 @@ module RubyVault
       @stderr = $stderr
     end
   end
-
-
 end

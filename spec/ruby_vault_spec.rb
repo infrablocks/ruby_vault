@@ -22,4 +22,3 @@ describe RubyVault do
     end
   end
 end
-

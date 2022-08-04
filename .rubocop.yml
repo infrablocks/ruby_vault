@@ -15,10 +15,6 @@ Metrics/BlockLength:
     - shared_examples
     - it
 
-Naming/FileName:
-  Exclude:
-    - lib/ruby-terraform.rb
-
 Style/Documentation:
   Enabled: false
 

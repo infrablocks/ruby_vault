@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require 'ruby_vault/options'
-require 'ruby_vault/version'
+require_relative 'ruby_vault/options'
+require_relative 'ruby_vault/version'
+require_relative 'ruby_vault/commands'
 require 'logger'
 
 module RubyVault
@@ -19,6 +20,25 @@ module RubyVault
     end
   end
 
+  module ClassMethods
+    def login(parameters = {}, invocation_options = {})
+      exec(RubyVault::Commands::Login,
+           parameters, invocation_options)
+    end
+
+    private
+
+    def exec(command_class, parameters, invocation_options)
+      command_class.new.execute(parameters, invocation_options)
+    end
+  end
+
+  extend ClassMethods
+
+  def self.included(other)
+    other.extend(ClassMethods)
+  end
+
   class Configuration
     attr_accessor :binary, :logger, :options, :stdin, :stdout, :stderr
 
@@ -33,7 +53,7 @@ module RubyVault
     end
 
     def initialize
-      @binary = 'terraform'
+      @binary = 'vault'
       @logger = default_logger
       @options = default_options
       @stdin = ''

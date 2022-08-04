@@ -10,6 +10,10 @@ module RubyVault
       @configuration ||= Configuration.new
     end
 
+    def configure
+      yield(configuration)
+    end
+
     def reset!
       @configuration = nil
     end

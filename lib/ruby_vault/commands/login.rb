@@ -12,7 +12,16 @@ module RubyVault
 
       # @!visibility private
       def options
-        super + Options::Sets::HTTP_OPTIONS + ['-method']
+        super +
+          Options::Sets::HTTP_OPTIONS +
+          Options::Sets::OUTPUT_OPTIONS +
+          %w[
+            -method
+            -no-print
+            -no-store
+            -path
+            -token-only
+          ]
       end
 
       def arguments(parameters)

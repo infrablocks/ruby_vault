@@ -26,7 +26,8 @@ module RubyVault
         -unlock-key
         -wrap-ttl
       ].map do |o|
-        definition(name: o, option_type: :standard, value_type: :string)
+        definition(name: o, option_type: :standard,
+                   value_type: :string)
       end,
 
       # flag options
@@ -37,7 +38,18 @@ module RubyVault
         -policy-override
         -tls-skip-verify
       ].map do |o|
-        definition(name: o, option_type: :flag, value_type: :boolean)
+        definition(name: o, option_type: :flag,
+                   value_type: :boolean)
+      end
+    ].flatten.freeze
+
+    OUTPUT_DEFINITIONS = [
+      # string options
+      %w[
+        -field
+        -format
+      ].map do |o|
+        definition(name: o, option_type: :standard, value_type: :string)
       end
     ].flatten.freeze
 
@@ -45,11 +57,25 @@ module RubyVault
       # string options
       %w[
         -method
+        -path
       ].map do |o|
         definition(name: o, option_type: :standard, value_type: :string)
+      end,
+
+      # flag options
+      %w[
+        -no-print
+        -no-store
+        -token-only
+      ].map do |o|
+        definition(name: o, option_type: :flag, value_type: :boolean)
       end
     ].flatten.freeze
 
-    DEFINITIONS = (HTTP_DEFINITIONS + OTHER_DEFINITIONS).flatten.freeze
+    DEFINITIONS = (
+      HTTP_DEFINITIONS +
+        OUTPUT_DEFINITIONS +
+        OTHER_DEFINITIONS
+    ).flatten.freeze
   end
 end

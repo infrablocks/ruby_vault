@@ -22,6 +22,11 @@ module RubyVault
         -unlock-key
         -wrap-ttl
       ].freeze
+
+      OUTPUT_OPTIONS = %w[
+        -field
+        -format
+      ].freeze
     end
   end
 end

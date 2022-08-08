@@ -26,12 +26,17 @@ describe RubyVault::Commands::Write do
   )
 
   it_behaves_like(
+    'a command with an argument array',
+    described_class, subcommand, :data
+  )
+
+  it_behaves_like(
     'a command with HTTP options',
     described_class, subcommand
   )
 
   it_behaves_like(
-    'a command with an argument array',
-    described_class, subcommand, :data
+    'a command with output options',
+    described_class, subcommand
   )
 end

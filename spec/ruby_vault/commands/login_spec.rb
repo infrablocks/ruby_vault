@@ -26,12 +26,37 @@ describe RubyVault::Commands::Login do
   )
 
   it_behaves_like(
+    'a command with an option',
+    described_class, subcommand, :path
+  )
+
+  it_behaves_like(
+    'a command with a flag',
+    described_class, subcommand, :token_only
+  )
+
+  it_behaves_like(
+    'a command with a flag',
+    described_class, subcommand, :no_print
+  )
+
+  it_behaves_like(
+    'a command with a flag',
+    described_class, subcommand, :no_store
+  )
+
+  it_behaves_like(
     'a command with an argument array',
     described_class, subcommand, :auth
   )
 
   it_behaves_like(
     'a command with HTTP options',
+    described_class, subcommand
+  )
+
+  it_behaves_like(
+    'a command with output options',
     described_class, subcommand
   )
 end

@@ -12,9 +12,7 @@ module RubyVault
 
       # @!visibility private
       def options
-        super
-          .concat(Options::Sets::HTTP_OPTIONS)
-          .concat(['-method'])
+        super + Options::Sets::HTTP_OPTIONS + ['-method']
       end
 
       def arguments(parameters)

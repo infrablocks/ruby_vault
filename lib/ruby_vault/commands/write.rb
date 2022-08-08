@@ -12,8 +12,7 @@ module RubyVault
 
       # @!visibility private
       def options
-        super
-          .concat(Options::Sets::HTTP_OPTIONS)
+        super + Options::Sets::HTTP_OPTIONS
       end
 
       # @!visibility private

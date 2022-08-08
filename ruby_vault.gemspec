@@ -56,6 +56,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop-rake'
   spec.add_development_dependency 'rubocop-rspec'
   spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'terminal-notifier-guard'
   spec.add_development_dependency 'yard'
 
   spec.metadata['rubygems_mfa_required'] = 'false'

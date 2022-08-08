@@ -125,7 +125,7 @@ GEM
       rubocop-ast (>= 1.19.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.19.1)
+    rubocop-ast (1.20.1)
       parser (>= 3.1.1.0)
     rubocop-rake (0.6.0)
       rubocop (~> 1.0)
@@ -146,6 +146,7 @@ GEM
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
     sshkey (2.0.0)
+    terminal-notifier-guard (1.7.0)
     thor (1.2.1)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
@@ -177,6 +178,7 @@ DEPENDENCIES
   rubocop-rspec
   ruby_vault!
   simplecov
+  terminal-notifier-guard
   yard
 
 BUNDLED WITH

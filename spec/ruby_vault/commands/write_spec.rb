@@ -22,4 +22,9 @@ describe RubyVault::Commands::Write do
     'a command with an argument',
     described_class, 'write', :path
   )
+
+  it_behaves_like(
+    'a command with an option',
+    described_class, 'write', :address
+  )
 end

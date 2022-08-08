@@ -6,6 +6,7 @@ module RubyVault
       # string options
       %w[
         -method
+        -address
       ].map do |o|
         definition(name: o, option_type: :standard, value_type: :string)
       end

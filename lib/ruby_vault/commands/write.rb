@@ -12,7 +12,9 @@ module RubyVault
 
       # @!visibility private
       def options
-        %w[] + super
+        %w[
+          address
+        ] + super
       end
 
       # @!visibility private

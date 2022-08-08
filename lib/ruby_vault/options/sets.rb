@@ -12,7 +12,12 @@ module RubyVault
         -client-key
         -mfa
         -namespace
+        -non-interactive
+        -output-curl-string
+        -output-policy
+        -policy-override
         -tls-server-name
+        -tls-skip-verify
         -unlock-key
       ].freeze
     end

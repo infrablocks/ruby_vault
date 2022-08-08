@@ -3,6 +3,7 @@
 module RubyVault
   module Options
     HTTP_DEFINITIONS = [
+      # string options
       %w[
         -address
         -agent-address
@@ -16,6 +17,17 @@ module RubyVault
         -unlock-key
       ].map do |o|
         definition(name: o, option_type: :standard, value_type: :string)
+      end,
+
+      # flag options
+      %w[
+        -non-interactive
+        -output-curl-string
+        -output-policy
+        -policy-override
+        -tls-skip-verify
+      ].map do |o|
+        definition(name: o, option_type: :flag, value_type: :boolean)
       end
     ].flatten.freeze
 

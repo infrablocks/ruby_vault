@@ -20,4 +20,17 @@ shared_examples(
       command_klass, subcommand, option
     )
   end
+
+  %i[
+    non_interactive
+    output_curl_string
+    output_policy
+    policy_override
+    tls_skip_verify
+  ].each do |option|
+    it_behaves_like(
+      'a command with a flag',
+      command_klass, subcommand, option
+    )
+  end
 end

@@ -14,7 +14,9 @@ module RubyVault
       def options
         super +
           Options::Sets::HTTP_OPTIONS +
-          Options::Sets::OUTPUT_OPTIONS
+          Options::Sets::OUTPUT_OPTIONS + %w[
+            -force
+          ]
       end
 
       # @!visibility private

@@ -64,6 +64,7 @@ module RubyVault
 
       # flag options
       %w[
+        -force
         -no-print
         -no-store
         -token-only

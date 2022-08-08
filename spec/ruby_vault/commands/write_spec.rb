@@ -21,6 +21,11 @@ describe RubyVault::Commands::Write do
   )
 
   it_behaves_like(
+    'a command with a flag',
+    described_class, subcommand, :force
+  )
+
+  it_behaves_like(
     'a command with an argument',
     described_class, subcommand, :path
   )

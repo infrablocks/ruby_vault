@@ -8,7 +8,12 @@ if `uname` =~ /Darwin/
   )
 end
 
-guard :rspec, cmd: 'bundle exec rspec' do
+guard(
+  :rspec,
+  cmd: 'bundle exec rspec',
+  all_after_pass: true,
+  all_on_start: true
+) do
   require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 

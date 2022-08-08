@@ -12,6 +12,8 @@ require 'faker'
 
 require 'ruby_vault'
 
+O = RubyVault::Options
+
 Dir[File.join(__dir__, 'support', '**', '*.rb')]
   .sort
   .each { |f| require f }

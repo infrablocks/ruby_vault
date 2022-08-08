@@ -17,7 +17,7 @@ module RubyVault
 
       # @!visibility private
       def arguments(parameters)
-        [parameters[:path]]
+        [parameters[:path], parameters[:data]].flatten
       end
     end
   end

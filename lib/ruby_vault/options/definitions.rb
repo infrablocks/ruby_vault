@@ -3,6 +3,15 @@
 module RubyVault
   module Options
     HTTP_DEFINITIONS = [
+      # key-value repeatable options
+      %w[-header].map do |o|
+        definition(
+          name: o, option_type: :standard, value_type: :string,
+          repeatable: true,
+          override_keys: { singular: false, plural: :headers }
+        )
+      end,
+
       # string options
       %w[
         -address
@@ -15,6 +24,7 @@ module RubyVault
         -namespace
         -tls-server-name
         -unlock-key
+        -wrap-ttl
       ].map do |o|
         definition(name: o, option_type: :standard, value_type: :string)
       end,

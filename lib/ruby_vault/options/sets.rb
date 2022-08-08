@@ -10,6 +10,7 @@ module RubyVault
         -ca-path
         -client-cert
         -client-key
+        -header
         -mfa
         -namespace
         -non-interactive
@@ -19,6 +20,7 @@ module RubyVault
         -tls-server-name
         -tls-skip-verify
         -unlock-key
+        -wrap-ttl
       ].freeze
     end
   end

@@ -14,6 +14,7 @@ shared_examples(
     namespace
     tls_server_name
     unlock_key
+    wrap_ttl
   ].each do |option|
     it_behaves_like(
       'a command with an option',
@@ -30,6 +31,15 @@ shared_examples(
   ].each do |option|
     it_behaves_like(
       'a command with a flag',
+      command_klass, subcommand, option
+    )
+  end
+
+  %i[
+    headers
+  ].each do |option|
+    it_behaves_like(
+      'a command with a variadic key-value option',
       command_klass, subcommand, option
     )
   end

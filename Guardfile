@@ -4,7 +4,8 @@ if `uname` =~ /Darwin/
   notification(
     :terminal_notifier,
     app_name: 'ruby_vault ::',
-    activate: 'com.googlecode.iTerm2')
+    activate: 'com.googlecode.iTerm2'
+  )
 end
 
 guard :rspec, cmd: 'bundle exec rspec' do

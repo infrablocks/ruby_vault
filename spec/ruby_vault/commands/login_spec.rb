@@ -28,4 +28,9 @@ describe RubyVault::Commands::Login do
     'a command with an argument array',
     described_class, subcommand, :auth
   )
+
+  it_behaves_like(
+    'a command with HTTP options',
+    described_class, subcommand
+  )
 end

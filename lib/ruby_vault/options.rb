@@ -5,6 +5,7 @@ require_relative 'options/types'
 require_relative 'options/values'
 require_relative 'options/definition'
 require_relative 'options/factory'
+require_relative 'options/sets'
 
 module RubyVault
   module Options

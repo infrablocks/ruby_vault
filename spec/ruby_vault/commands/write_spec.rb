@@ -3,6 +3,8 @@
 require 'spec_helper'
 
 describe RubyVault::Commands::Write do
+  subcommand = 'write'
+
   before do
     RubyVault.configure do |config|
       config.binary = 'path/to/binary'
@@ -15,16 +17,16 @@ describe RubyVault::Commands::Write do
 
   it_behaves_like(
     'a command without a binary supplied',
-    described_class, 'write'
+    described_class, subcommand
   )
 
   it_behaves_like(
     'a command with an argument',
-    described_class, 'write', :path
+    described_class, subcommand, :path
   )
 
   it_behaves_like(
-    'a command with an option',
-    described_class, 'write', :address
+    'a command with HTTP options',
+    described_class, subcommand
   )
 end

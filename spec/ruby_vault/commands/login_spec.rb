@@ -4,6 +4,7 @@ require 'spec_helper'
 
 describe RubyVault::Commands::Login do
   subcommand = 'login'
+
   before do
     RubyVault.configure do |config|
       config.binary = 'path/to/binary'

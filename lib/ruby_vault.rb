@@ -26,6 +26,11 @@ module RubyVault
            parameters, invocation_options)
     end
 
+    def write(parameters = {}, invocation_options = {})
+      exec(RubyVault::Commands::Write,
+           parameters, invocation_options)
+    end
+
     private
 
     def exec(command_class, parameters, invocation_options)

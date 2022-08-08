@@ -3,6 +3,7 @@
 require 'spec_helper'
 
 describe RubyVault::Commands::Login do
+  subcommand = 'login'
   before do
     RubyVault.configure do |config|
       config.binary = 'path/to/binary'
@@ -15,11 +16,16 @@ describe RubyVault::Commands::Login do
 
   it_behaves_like(
     'a command without a binary supplied',
-    described_class, 'login'
+    described_class, subcommand
   )
 
   it_behaves_like(
     'a command with an option',
-    described_class, 'login', :method
+    described_class, subcommand, :method
+  )
+
+  it_behaves_like(
+    'a command with an argument array',
+    described_class, subcommand, :auth
   )
 end

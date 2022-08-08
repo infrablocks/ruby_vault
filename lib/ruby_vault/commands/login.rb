@@ -16,6 +16,10 @@ module RubyVault
           -method
         ] + super
       end
+
+      def arguments(parameters)
+        [parameters[:auth]]
+      end
     end
   end
 end

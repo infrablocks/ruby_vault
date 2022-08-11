@@ -4,24 +4,22 @@ require_relative 'base'
 
 module RubyVault
   module Commands
-    class Write < Base
+    class List < Base
       # @!visibility private
       def subcommands
-        %w[write]
+        %w[list]
       end
 
       # @!visibility private
       def options
         super +
           Options::Sets::HTTP_OPTIONS +
-          Options::Sets::OUTPUT_OPTIONS + %w[
-            -force
-          ]
+          Options::Sets::OUTPUT_OPTIONS
       end
 
       # @!visibility private
       def arguments(parameters)
-        [parameters[:path], parameters[:data]].compact.flatten
+        [parameters[:path]].compact.flatten
       end
     end
   end

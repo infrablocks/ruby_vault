@@ -31,6 +31,11 @@ module RubyVault
            parameters, invocation_options)
     end
 
+    def list(parameters = {}, invocation_options = {})
+      exec(RubyVault::Commands::List,
+           parameters, invocation_options)
+    end
+
     private
 
     def exec(command_class, parameters, invocation_options)

@@ -8,7 +8,9 @@ end
 
 describe RubyVault do
   commands = {
-    login: RubyVault::Commands::Login
+    login: RubyVault::Commands::Login,
+    write: RubyVault::Commands::Write,
+    list: RubyVault::Commands::List
   }
 
   it 'has a version number' do

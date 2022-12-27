@@ -95,28 +95,24 @@
 
 <p>To install dependencies and run the build, run the pre-commit build:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_script'>script</span>
-<span class='period'>.</span><span class='op'>/</span><span class='id identifier rubyid_go'>go</span>
+<pre class="code ruby"><code class="ruby">./go
 </code></pre>
 
 <p>This runs all unit tests and other checks including coverage and code linting / formatting.</p>
 
 <p>To run only the unit tests, including coverage:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_script'>script</span>
-<span class='period'>.</span><span class='op'>/</span><span class='id identifier rubyid_go'>go</span> <span class='label'>test:</span><span class='id identifier rubyid_unit'>unit</span>
+<pre class="code ruby"><code class="ruby">./go test:unit
 </code></pre>
 
 <p>To attempt to fix any code linting / formatting issues:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_script'>script</span>
-<span class='period'>.</span><span class='op'>/</span><span class='id identifier rubyid_go'>go</span> <span class='label'>library:</span><span class='id identifier rubyid_fix'>fix</span>
+<pre class="code ruby"><code class="ruby">./go library:fix
 </code></pre>
 
 <p>To check for code linting / formatting issues without fixing:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_script'>script</span>
-<span class='period'>.</span><span class='op'>/</span><span class='id identifier rubyid_go'>go</span> <span class='label'>library:</span><span class='id identifier rubyid_check'>check</span>
+<pre class="code ruby"><code class="ruby">./go library:check
 </code></pre>
 
 <p>You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
@@ -152,7 +148,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Tue Dec 27 12:48:25 2022 by
+  Generated on Tue Dec 27 12:53:34 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-2.7.5).
 </div>

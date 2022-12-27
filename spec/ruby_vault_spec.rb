@@ -21,6 +21,8 @@ describe RubyVault do
     allow(Open4).to(receive(:spawn))
 
     described_class.login(directory: 'some/path/to/configuration')
+
+    expect(Open4).to(have_received(:spawn))
   end
 
   describe 'configuration' do

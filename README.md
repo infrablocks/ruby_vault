@@ -35,7 +35,7 @@ require 'ruby_vault'
 
 To install dependencies and run the build, run the pre-commit build:
 
-```shell script
+```shell
 ./go
 ```
 
@@ -44,19 +44,19 @@ formatting.
 
 To run only the unit tests, including coverage:
 
-```shell script
+```shell
 ./go test:unit
 ```
 
 To attempt to fix any code linting / formatting issues:
 
-```shell script
+```shell
 ./go library:fix
 ```
 
 To check for code linting / formatting issues without fixing:
 
-```shell script
+```shell
 ./go library:check
 ```
 
@@ -67,7 +67,7 @@ experiment.
 
 To encrypt a GPG key for use by CircleCI:
 
-```bash
+```shell
 openssl aes-256-cbc \
   -e \
   -md sha1 \
@@ -78,7 +78,7 @@ openssl aes-256-cbc \
 
 To check decryption is working correctly:
 
-```bash
+```shell
 openssl aes-256-cbc \
   -d \
   -md sha1 \

@@ -9,13 +9,13 @@ end
 
 require 'bundler/setup'
 require 'faker'
+require 'tempfile'
 
 require 'ruby_vault'
 
 O = RubyVault::Options
 
 Dir[File.join(__dir__, 'support', '**', '*.rb')]
-  .sort
   .each { |f| require f }
 
 RSpec.configure do |config|

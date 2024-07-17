@@ -99,7 +99,7 @@ module RubyVault
       end
 
       def build_option(value)
-        option_type.new(name, value, separator: separator, placement: placement)
+        option_type.new(name, value, separator:, placement:)
       end
 
       def build_value(value)

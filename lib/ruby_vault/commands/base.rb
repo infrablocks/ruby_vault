@@ -50,9 +50,9 @@ module RubyVault
 
         logger.debug("Running '#{command}'.")
         command.execute(
-          stdin: stdin,
-          stdout: stdout,
-          stderr: stderr
+          stdin:,
+          stdout:,
+          stderr:
         )
       end
 

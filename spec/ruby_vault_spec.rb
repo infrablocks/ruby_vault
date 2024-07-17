@@ -18,11 +18,16 @@ describe RubyVault do
   end
 
   it 'allows commands to be run without configure having been called' do
-    allow(Open4).to(receive(:spawn))
+    executor = Lino::Executors::Mock.new
+    Lino.configure do |config|
+      config.executor = executor
+    end
 
     described_class.login(directory: 'some/path/to/configuration')
 
-    expect(Open4).to(have_received(:spawn))
+    expect(executor.executions.length).to(eq(1))
+  ensure
+    Lino.reset!
   end
 
   describe 'configuration' do
@@ -77,7 +82,7 @@ describe RubyVault do
     end
 
     it 'allows stdout stream to be overridden' do
-      stdout = StringIO.new
+      stdout = Tempfile.new
 
       described_class.configure do |config|
         config.stdout = stdout
@@ -91,7 +96,7 @@ describe RubyVault do
     end
 
     it 'allows stderr stream to be overridden' do
-      stderr = StringIO.new
+      stderr = Tempfile.new
 
       described_class.configure do |config|
         config.stderr = stderr
@@ -101,7 +106,7 @@ describe RubyVault do
     end
 
     it 'uses empty string for stdin by default' do
-      expect(described_class.configuration.stdin).to eq('')
+      expect(described_class.configuration.stdin).to(be_nil)
     end
 
     it 'allows stdin stream to be overridden' do
@@ -125,7 +130,6 @@ describe RubyVault do
         let(:instance) { instance_double(command_class, execute: nil) }
 
         before do
-          allow(Open4).to receive(:spawn)
           allow(command_class).to receive(:new).and_return(instance)
           described_class.send(method, parameters, invocation_options)
         end

@@ -14,6 +14,8 @@ Metrics/BlockLength:
     - context
     - shared_examples
     - it
+  Exclude:
+    - 'Rakefile'
 
 Style/Documentation:
   Enabled: false
